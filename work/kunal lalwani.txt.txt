@@ -1,0 +1,211 @@
+#include<stdio.h>
+#include<conio.h>
+void main(void)
+{
+int k,f[10],e=0;
+int z;
+char ch[10];
+printf("\t\t\t|--------------------|\n");
+printf("\t\t\t\t| Java Quiz|\n");
+printf("\t\t\t|-----------------------------|\n");
+printf("There are 10 Questions\n How many you want to Play?\n");
+scanf("%d",&z);
+clrscr();
+for(k=0;k<z;k++)
+{
+switch(k)
+{
+case 0:
+printf("|-------------|\n");
+printf("|Question %d.|\n",k+1);
+printf("|----------------|\n");
+printf("How many types of java language \n1)2 2)3\n3)4 4)5\n");
+scanf("%d",&f[k]);
+if(f[k]==1)
+{
+e=e+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Correct\n");
+getch();
+clrscr();
+}
+break;
+case 1:
+printf("|---------------|\n");
+printf("|Question %d.|\n",k+1);
+printf("|----------|\n");
+printf("_________________Makes java Platform independant.\n1)JVM 2) java syntax\n3) Java API 4)Bytecoddes\n");
+scanf("%d",&f[k]);
+if(f[k]==4)
+{
+e=e+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not COrrect\n");
+printf("ANswer =4\n");
+getch();
+clrscr();
+}
+break;
+case 2:
+printf("|______________________________|\n");
+printf("|Questrion %d.|\n",k+1);
+printf("|_______________________|\n");
+printf("Java's kyword includes NULL.\n1)True 2) false\n");
+scanf("%d",&f[k]);
+if(f[k]==2)
+{
+e=e+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not COrrect\n");
+getch();
+clrscr();
+}
+break;
+case 3:
+printf("|____________________|\n");
+printf("|Question%d.|\n",k+1);
+printf("|___________________|\n");
+printf("which ocuupies more number\n of bits of memory.\n1) double 2) long\n3) both 4) occupies same \n");
+scanf("%d",&f[k]);
+if(f[k]==3)
+{
+e=e+1;
+printf("Correct'n");
+getch();
+clrscr();
+}
+else
+{ 
+printf("NOt Correct\n");
+printf("Answer=3\n");
+getch();
+clrscr();
+}
+break;
+case 4:
+printf("|-------------------------|\n");
+printf("|Question %d.|\n",k+1);
+printf("|-----------------------------------------|\n");
+printf(" The object is created with new keyword .\n1) at compile time 2) at run time\n3) depends on the code 4) None\n");
+scanf("%d",&f[k]);
+if(f[k]==2)
+{
+e=e+1; 
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not correct\n");
+printf("Answer=2\n");
+getch();
+clrscr();
+}
+break;
+case 5:
+printf("|-------------------------|\n");
+printf("|Question %d.|\n",k+1);
+printf("|-------------------------|\n");
+printf("int x=0,y=0,z=0,\nx=(++x+y--)*z++;\n What is the value of x after exexcution?n1)-2 2)-1\n3)0 4)1\n");\
+scanf("%d",&f[k]);
+if(f[k]==3)
+{
+e=e+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not COrrect\n");
+printf("Answer=3\n");
+getch();
+clrscr();
+}
+break;
+case 6:
+printf("|-------------------------|\n");
+printf("|Question %d.|\n",k+1);
+printf("|-----------------------------------------|\n");
+printf("int 4th house=1234;\nsystem.out.p rintln(4th house);\n1)1234\n2)Display error as the value assigned\nis more then the range \nof integer\n3) displays error as coding is not\nas per java rules\n4)None\n");
+scanf("%d",&f[k]);
+if(f[k]==3)
+{
+e=e+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Corresct\n");
+printf("Answer=3\n");
+getch();
+clrscr();
+}
+break;
+
+case 8:
+printf("|-------------------------|\n");
+printf("|Question %d.|\n",k+1);
+printf("|-----------------------------------------|\n");
+printf("How many primitive data types java defines? \n1)6 2)8\n3)10 \n4) None\n");
+scanf("%d",&f[k]);
+if(f[k]==2)
+{
+e=e+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Corresct\n");
+printf("Answer=2\n");
+getch();
+clrscr();
+}
+break;
+case 9:
+printf("|-------------------------|\n");
+printf("|Question %d.|\n",k+1);
+printf("|-----------------------------------------|\n");
+printf("Final methods cannot be overhidden\n but over loaded?\n!)True 2)false\n");
+scanf("%d",&f[k]);
+if(f[k]==1)
+{
+e=e+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Corresct\n");
+printf("Answer=1\n");
+getch();
+clrscr();
+}
+break;
+}
+}
+
+
+
+

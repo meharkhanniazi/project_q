@@ -1,0 +1,233 @@
+#include<stdio.h>
+#include<conio.h>
+void quizcc()
+{
+int j,b[10],d=0;
+int x;
+char ch1[10];
+printf("\t\t\t\t|----------|\n");
+printf("\t\t\t\t |C++ Quiz|\n");
+printf("\t\t\t\t|----------|\n");
+printf("There are 10 Questions\n How many you want to play?\n");
+scanf("%d",&x);
+clrscr();
+for(j=0;j<x;j++)
+{
+switch(j)
+{
+case 0:
+printf("|---------|\n");
+printf("Question %d.|\n",j+1);
+printf("|---------|\n");
+printf("What is the another name of language C++\n 1)PHP 2)JAVA \n 3) OOPS 4) C\n");
+scanf("%d",&b[j]);
+if(b[j]==3)
+{
+d=d+1;
+printf("correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Correct\n");
+printf("Answer=3\n");
+getch();
+clrscr();
+}
+break;
+case 1:
+printf("|---------|\n");
+printf("Question %d.|\n",j+1);
+printf("|---------|\n");
+printf("What is data hinding\n 1)It is related with hinding internal\nobjects details\n 2) It is related with showing\ninternal object detail\n 3) It is relate with data types\n 4) None\n");
+scanf("%d",&b[j]);
+if(b[j]==1)
+{
+d=d+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Correct\n");
+printf("Answer=1\n");
+getch();
+clrscr();
+}
+break;
+case 2:
+printf("|---------|\n");
+printf("Question %d.|\n",j+1);
+printf("|---------|\n");
+printf("what is class in C++?\n 1)when you define a class, \n you define a blue print for a data type\n 2) When you define a class,\n you make get more functionatially\n 3) When you define a class\n you define the logic\n 4) when you define a class\n you make debugging\n");
+scanf("%d",&b[j]);
+if(b[j]==1)
+{
+d=d+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Correct\n");
+printf("Answer=1\n");
+getch();
+clrscr();
+}
+break;
+case 3:
+printf("|---------|\n");
+printf("Question %d.|\n",j+1);
+printf("|---------|\n");
+printf("What is object in C++?\n 1) Object is part of syntex of \na class. \n2) Object is datatype of a class\n 3) Object is an instance of a class\n 4) Object is function of a class");
+scanf("%d",&b[j]);
+if(b[j]==3)
+{
+d=d+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Correct\n");
+printf("Answer=3\n");
+getch();
+clrscr();
+} 
+break;
+case 4:
+printf("|---------|\n");
+printf("Question %d.|\n",j+1);
+printf("|---------|\n");
+printf("What is purpose of abstract class?\n 1) to provide help with database connectivily\n 2) to provide help with data input to other classes\n 3) to provide security to other classes\n 4) to provide an appropriate base\nclass from which other classes \n can inherit\n");
+scanf("%d",&b[j]);
+if(b[j]==4)
+{
+d=d+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Correct\n");
+printf("Answer=4\n");
+getch();
+clrscr();
+}
+break;
+case 5:
+printf("|---------|\n");
+printf("Question %d.|\n",j+1);
+printf("|---------|\n");
+printf("Classes that can be used\n to instantate objects are called\nconcrete classes.\n 1) True 2) False \n");
+scanf("%d",&b[j]);
+if(b[j]==1)
+{
+d=d+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Correct\n");
+printf("Answer=1\n");
+getch();
+clrscr();
+} 
+break;
+
+case 6:
+printf("|---------|\n");
+printf("Question %d.|\n",j+1);
+printf("|---------|\n");
+printf("What is default visibility mode\nfor members of classes\nin C++?\n 1) Private 2) Public\n 3) Protected 4) Depends\n");
+scanf("%d",&b[j]);
+if(b[j]==1)
+{
+d=d+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Correct\n");
+printf("Answer=1\n");
+getch();
+clrscr();
+} 
+break;
+case 7:
+printf("|---------|\n");
+printf("Question %d.|\n",j+1);
+printf("|---------|\n");
+printf("Which is more memory efficient? \n 1) Structure 2) Union \n 3) Both 4) Depend on programmer\n");
+scanf("%d",&b[j]);
+if(b[j]==2)
+{
+d=d+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Correct\n");
+printf("Answer=2\n");
+getch();
+clrscr();
+}
+break;
+case 8:
+printf("|---------|\n");
+printf("Question %d.|\n",j+1);
+printf("|---------|\n");
+printf("Whichg among following is not a valid\nvisbility mode in C++ program?\n 1) private 2) Public \n 3) Protected 4) Limited\n");
+scanf("%d",&b[j]);
+if(b[j]==4)
+{
+d=d+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Correct\n");
+printf("Answer=4\n");
+getch();
+clrscr();
+}
+break;
+case 9:
+printf("|---------|\n");
+printf("Question %d.|\n",j+1);
+printf("|---------|\n");
+printf("Even if we deifnes a function\nin a class, then also we\n need to declare it first\n 1) True 2) False\n");
+scanf("%d",&b[j]);
+if(b[j]==2)
+{
+d=d+1;
+printf("Correct\n");
+getch();
+clrscr();
+}
+else
+{
+printf("Not Correct\n");
+printf("Answer=2\n");
+getch();
+clrscr();
+}
+break;
+}
+}
+printf("What is your Name?\n");
+scanf("%s", &ch1);
+clrscr();
