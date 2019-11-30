@@ -4,6 +4,7 @@
 void quizc();
 void qucc();
 void java();
+void phy();
 
 main()
 {
@@ -16,7 +17,8 @@ printf("\t\t\t--------------------------\n");
 printf("1) C Quiz");
 printf("\n2) C++ QUIZ");
 printf("\n3) JAVA");
-printf("\n4) Exit");
+printf("\n4) Physics");
+printf("\n5) Exit");
 printf("\n\nEnter only 1 option please: ");
 scanf("%d",&userinp);
 clrscr();
@@ -36,6 +38,10 @@ switch(userinp)
  break;
 
  case 4:
+ phy();
+ break;
+
+ case 5:
  break;
 
  default:
@@ -300,9 +306,10 @@ void quizc(void)
 	}
 
  }
-printf("\n|--------------|");
+printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
-printf("\n|--------------|");
+printf("\n|-------------------------------------------------|");
+getch();
  }
 
 void qucc(void)
@@ -561,10 +568,11 @@ void qucc(void)
 	}
 
  }
-printf("\n|--------------|");
+printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
-printf("\n|--------------|");
- }
+printf("\n|-------------------------------------------------|");
+getch();
+}
 void java(void)
 {
  int userquiz,score=0,c[10];
@@ -821,8 +829,260 @@ void java(void)
 	}
 
  }
-printf("\n|--------------|");
+printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
-printf("\n|--------------|");
+printf("\n|-------------------------------------------------|");
+getch();
  }
- 
+ void phy(void)
+{
+ int userquiz,score=0,c[10];
+ char ch[10];
+ printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
+ printf("\n\n\tThere are 10 Questions. How many you want to play?");
+ printf("\n\tEnter here please: ");
+ scanf("%d",&userquiz);
+ clrscr();
+
+ for(int i=0; i<userquiz; i++)
+ {
+	switch(i)
+	{
+		case 0:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+	        printf("|--------------|");
+                printf("\nThe SI unit of Heat is________?\n");
+                printf("\n\n\t1)Watt. \n\t2) volt. \n\t3)joule \n\t4)None\n");
+                printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 3)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"joule\".");
+			getch();
+			clrscr();
+		}
+		break;
+case 1:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nThe branch of science which deals with the properties of matter and energy is called__________?\n");
+		printf("\n\n\t1. Biology\n\t2. Geography\n\t3. Physics\n\t4. chemistry\n");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 3)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"physcis\".");
+			getch();
+			clrscr();
+		}
+		break;
+case 2:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nPhysics is one of the branches of___________?");
+		printf("\n\n\t1. Physical science\n\t2. social science\n\t3. Biological science\n\t4. life science\n");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 1)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"physical science\".");
+			getch();
+			clrscr();
+		}
+		break;
+case 3:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nlinear expansion occurs in_________?");
+		printf("\n\n\t1. solid\n\t2.liquid\n\t3. gas\n\t4. none\n");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 1)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"solid\".");
+			getch();
+			clrscr();
+		}
+		break;
+case 4:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nWhen body is in motion, ____________ always changes?");
+		printf("\n\n\t1.its velocity\n\t2.its acceleration\n\t3.its momentum\n\t4. its position vector\n");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 4)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"its position vector\".");
+			getch();
+			clrscr();
+		}
+		break;
+case 5:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nArea under velocity time graph represent_____________________?");
+		printf("\n\n\t1force\n\t2.displacement\n\t3.distance\n\t4. none\n");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 2)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"displacement\".");
+			getch();
+			clrscr();
+		}
+		break;
+case 6:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\n1st law of motion gives the definition of _________________________?");
+		printf("\n\n\t1 rest\n\t2.motion\n\t3.force\n\t4. none\n");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 3)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"force\".");
+			getch();
+			clrscr();
+		}
+		break;
+case 7:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nTime rate of change of momentum is equal to____________________?");
+		printf("\n\n\t1force\n\t2.impulse\n\t3.torque\n\t4. none\n");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 1)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"force\".");
+			getch();
+			clrscr();
+		}
+		break;
+case 8:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nThe trajectory (or path) of a projectile is_________________?");
+		printf("\n\n\t1parabola\n\t2.hyberbola\n\t3.ellipse\n\t4. none\n");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 1)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"parabola\".");
+			getch();
+			clrscr();
+		}
+		break;
+case 9:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nWaves transmit ________________ from one place to another?");
+		printf("\n\n\t1energy\n\t2.mass\n\t3.weight\n\t4. none\n");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 1)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"energy\".");
+			getch();
+			clrscr();
+		}
+		break;
+        }
+
+}
+printf("\n|-------------------------------------------------|");
+printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
+printf("\n|-------------------------------------------------|");
+getch();
+}
