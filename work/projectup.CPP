@@ -5,6 +5,7 @@ void quizc();
 void qucc();
 void java();
 void phy();
+void again();
 
 main()
 {
@@ -52,7 +53,7 @@ return 0;
 
 void quizc(void)
 {
- int userquiz,score=0,c[10];
+ int userquiz,w,score=0,c[10];
  char ch[10];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
@@ -310,11 +311,22 @@ printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
 getch();
- }
+clrscr();
+printf("What you want?\n\t1) Play More\n\t2) Exit\n");
+scanf("%d",&w);
+clrscr();
+switch(w)
+ {
+ case 1: again();
+	 clrscr();
+	 break;
+ case 2: break;
+ } 
+}
 
 void qucc(void)
 {
- int userquiz,score=0,c[10];
+ int userquiz,w,score=0,c[10];
  char ch[10];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
@@ -572,10 +584,21 @@ printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
 getch();
+clrscr();
+printf("What you want?\n\t1) Play More\n\t2) Exit\n");
+scanf("%d",&w);
+clrscr();
+switch(w)
+ {
+ case 1: again();
+	 clrscr();
+	 break;
+ case 2: break;
+ }
 }
 void java(void)
 {
- int userquiz,score=0,c[10];
+ int userquiz,w,score=0,c[10];
  char ch[10];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
@@ -833,10 +856,21 @@ printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
 getch();
+clrscr();
+printf("What you want?\n1) Play More\n2) Exit\n");
+scanf("%d",&w);
+clrscr();
+switch(w)
+ {
+ case 1: again();
+	 clrscr();
+	 break;
+ case 2: break;
+ }
  }
  void phy(void)
 {
- int userquiz,score=0,c[10];
+ int userquiz,w,score=0,c[10];
  char ch[10];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
@@ -1084,5 +1118,59 @@ case 9:
 printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
+getch();
+clrscr();
+printf("What you want?\n\t1) Play More\n\t2) Exit\n");
+scanf("%d",&w);
+clrscr();
+switch(w)
+ {
+ case 1: again();
+	 clrscr();
+	 break;
+ case 2: break;
+ }
+}
+void again()
+{
+int userinp;
+clrscr();
+printf("\t\t\t--------------------------\n");
+printf("\t\t\t|Welcome in Language Quiz|\n");
+printf("\t\t\t--------------------------\n");
+
+printf("1) C Quiz");
+printf("\n2) C++ QUIZ");
+printf("\n3) JAVA");
+printf("\n4) Physics");
+printf("\n5) Exit");
+printf("\n\nEnter only 1 option please: ");
+scanf("%d",&userinp);
+clrscr();
+
+switch(userinp)
+{
+ case 1:
+ quizc();
+ break;
+
+ case 2:
+ qucc();
+ break;
+
+ case 3:
+ java();
+ break;
+
+ case 4:
+ phy();
+ break;
+
+ case 5:
+ break;
+
+ default:
+ break;
+}
 getch();
 }
