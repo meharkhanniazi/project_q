@@ -1,7 +1,4 @@
-//MEHAR KHAN NIAZI
-//KUNAL LALWANI
-//HASEEB
-//MUHAMMAD AZHAR
+
 #include<stdio.h>
 #include<conio.h>
 
@@ -9,6 +6,7 @@ void quizc();
 void qucc();
 void java();
 void phy();
+void engl();
 void again();
 
 main()
@@ -23,8 +21,9 @@ printf("1) C Quiz");
 printf("\n2) C++ QUIZ");
 printf("\n3) JAVA");
 printf("\n4) Physics");
-printf("\n5) Exit");
-printf("\n\nEnter only 1 option please: ");
+printf("\n5) ENGLISH");
+printf("\n6) Exit");
+printf("\n\nENTER: ");
 scanf("%d",&userinp);
 clrscr();
 
@@ -47,6 +46,10 @@ switch(userinp)
  break;
 
  case 5:
+ engl();
+ break;
+
+ case 6:
  break;
 
  default:
@@ -57,7 +60,7 @@ return 0;
 
 void quizc(void)
 {
- int userquiz,w,score=0,c[10];
+ int userquiz,w,atg=1,score=0,count=0,c[10];
  char ch[10];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
@@ -67,9 +70,14 @@ void quizc(void)
 
  for(int i=0; i<userquiz; i++)
  {
+  if(atg==0)
+  break;
+  else
+      {
 	switch(i)
 	{
 		case 0:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -80,7 +88,7 @@ void quizc(void)
 		if(c[i] == 2)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -94,17 +102,18 @@ void quizc(void)
 		break;
 
 		case 1:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
 		printf("\n\nC Language has been developed by __________________.");
-		printf("\n\n\t1. Martin Richards\n\t2. Bijarne Stroustrup\n\t3. Dennis Ritche\n\t4. Ken Thompson");
+		printf("\n\n\t1. Martin Richards\n\t2. Bijarne Stroustrup\n\t3. Dennis Ritche\n\t4.KenThompson");
 		printf("\n\nEnter only 1 option here: ");
 		scanf("%d",&c[i]);
 		if(c[i] == 3)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -118,6 +127,7 @@ void quizc(void)
 		break;
 
 		case 2:
+               
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -128,7 +138,7 @@ void quizc(void)
 		if(c[i] == 2)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -142,6 +152,9 @@ void quizc(void)
 		break;
 
 		case 3:
+                if(count>=1)
+                {
+                count=0;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -152,7 +165,7 @@ void quizc(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -164,8 +177,31 @@ void quizc(void)
 			clrscr();
 		}
 		break;
-
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                quizc();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;
+                }
+                }
 		case 4:
+                if(atg==0)
+                break;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -176,7 +212,7 @@ void quizc(void)
 		if(c[i] == 3)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -190,6 +226,7 @@ void quizc(void)
 		break;
 
 		case 5:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -200,7 +237,7 @@ void quizc(void)
 		if(c[i] == 2)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -214,6 +251,9 @@ void quizc(void)
 		break;
 
 		case 6:
+                if(count>=1)
+                {
+                count=0;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -224,7 +264,7 @@ void quizc(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -236,8 +276,33 @@ void quizc(void)
 			clrscr();
 		}
 		break;
-
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1: 
+                quizc();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;;
+                }
+                }
 		case 7:
+                if(atg==0)
+                break;
+                if(count>=1)
+                {
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -248,7 +313,7 @@ void quizc(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -260,8 +325,24 @@ void quizc(void)
 			clrscr();
 		}
 		break;
-
+                }
+                else
+                {
+                clrscr();
+                printf("\n\nSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("WHAT YOU WANT?\n\t1) Play More\n\t2) Exit\n");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1: again();
+	        clrscr();
+	        break;
+                case 2: break;
+                } 
+                }
 		case 8:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -272,7 +353,7 @@ void quizc(void)
 		if(c[i] == 3)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -286,6 +367,9 @@ void quizc(void)
 		break;
 
 		case 9:
+                if(count>=1)
+                {
+                count=0;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -296,7 +380,7 @@ void quizc(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -308,29 +392,58 @@ void quizc(void)
 			clrscr();
 		}
 		break;
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                quizc();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;
+                }
+		}
 	}
 
+ }
  }
 printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
 getch();
 clrscr();
-printf("What you want?\n\t1) Play More\n\t2) Exit\n");
-scanf("%d",&w);
-clrscr();
-switch(w)
- {
- case 1: again();
-	 clrscr();
-	 break;
- case 2: break;
- } 
-}
+printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
+		scanf("%d",&w);
+		clrscr();
+		switch(w)
+		{
+		case 1:
+		qucc();
+		clrscr();
+		break;
+		case 2:
+		again();
+		break;
+		case 3: break;
+                default:
+                break;
+		}
+		}
 
 void qucc(void)
 {
- int userquiz,w,score=0,c[10];
+ int userquiz,w,atg=1,score=0,count=0,c[10];
  char ch[10];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
@@ -340,9 +453,14 @@ void qucc(void)
 
  for(int i=0; i<userquiz; i++)
  {
+  if(atg==0)
+  break;
+  else
+      {
 	switch(i)
 	{
 		case 0:
+
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -353,7 +471,7 @@ void qucc(void)
 		if(c[i] == 3)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -367,6 +485,7 @@ void qucc(void)
 		break;
 
 		case 1:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -377,7 +496,7 @@ void qucc(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -391,6 +510,7 @@ void qucc(void)
 		break;
 
 		case 2:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -401,7 +521,7 @@ void qucc(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -415,6 +535,9 @@ void qucc(void)
 		break;
 
 		case 3:
+                if(count>=1)
+                {
+                count=0;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -425,7 +548,7 @@ void qucc(void)
 		if(c[i] == 3)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -437,8 +560,32 @@ void qucc(void)
 			clrscr();
 		}
 		break;
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                qucc();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;
+                }
+                }
 
 		case 4:
+                if(atg==0)
+                break;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -449,7 +596,7 @@ void qucc(void)
 		if(c[i] == 4)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -463,6 +610,7 @@ void qucc(void)
 		break;
 
 		case 5:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -473,7 +621,7 @@ void qucc(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -487,6 +635,9 @@ void qucc(void)
 		break;
 
 		case 6:
+                if(count>=1)
+                {
+                count=0;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -497,7 +648,7 @@ void qucc(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -509,8 +660,32 @@ void qucc(void)
 			clrscr();
 		}
 		break;
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                qucc();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;
+                }
+                }
 
 		case 7:
+                if(atg==0)
+                break;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -521,7 +696,7 @@ void qucc(void)
 		if(c[i] == 2)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -535,6 +710,7 @@ void qucc(void)
 		break;
 
 		case 8:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -545,7 +721,7 @@ void qucc(void)
 		if(c[i] == 4)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -559,6 +735,9 @@ void qucc(void)
 		break;
 
 		case 9:
+                if(count>=1)
+                {
+                count=0;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -569,7 +748,7 @@ void qucc(void)
 		if(c[i] == 2)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -581,28 +760,57 @@ void qucc(void)
 			clrscr();
 		}
 		break;
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                qucc();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;
+                }
+                }
 	}
 
+ }
  }
 printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
 getch();
 clrscr();
-printf("What you want?\n\t1) Play More\n\t2) Exit\n");
-scanf("%d",&w);
-clrscr();
-switch(w)
- {
- case 1: again();
-	 clrscr();
-	 break;
- case 2: break;
- }
-}
+printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                qucc();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                case 3: break;
+                default:
+                break;
+                }
+                }
 void java(void)
 {
- int userquiz,w,score=0,c[10];
+ int userquiz,w,atg=1,score=0,count=0,c[10];
  char ch[10];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
@@ -612,9 +820,14 @@ void java(void)
 
  for(int i=0; i<userquiz; i++)
  {
+  if(atg==0)
+  break;
+  else
+      {
 	switch(i)
 	{
 		case 0:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -625,7 +838,7 @@ void java(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -639,6 +852,7 @@ void java(void)
 		break;
 
 		case 1:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -649,7 +863,7 @@ void java(void)
 		if(c[i] == 4)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -663,6 +877,7 @@ void java(void)
 		break;
 
 		case 2:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -673,7 +888,7 @@ void java(void)
 		if(c[i] == 2)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -687,6 +902,9 @@ void java(void)
 		break;
 
 		case 3:
+                if(count>=1)
+                {
+                count=0;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -697,7 +915,7 @@ void java(void)
 		if(c[i] == 3)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -709,8 +927,32 @@ void java(void)
 			clrscr();
 		}
 		break;
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                java();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;
+                }
+                }
 
 		case 4:
+                if(atg==0)
+                break;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -721,7 +963,7 @@ void java(void)
 		if(c[i] == 2)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -735,6 +977,7 @@ void java(void)
 		break;
 
 		case 5:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -745,7 +988,7 @@ void java(void)
 		if(c[i] == 3)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -759,6 +1002,9 @@ void java(void)
 		break;
 
 		case 6:
+                if(count>=1)
+                {
+                count=0;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -769,7 +1015,7 @@ void java(void)
 		if(c[i] == 3)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -781,8 +1027,32 @@ void java(void)
 			clrscr();
 		}
 		break;
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                java();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;
+                }
+                }
 
 		case 7:
+                if(atg==0)
+                break;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -793,7 +1063,7 @@ void java(void)
 		if(c[i] == 2)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -807,6 +1077,7 @@ void java(void)
 		break;
 
 		case 8:
+
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -817,7 +1088,7 @@ void java(void)
 		if(c[i] == 2)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -831,6 +1102,9 @@ void java(void)
 		break;
 
 		case 9:
+                if(count>=1)
+                {
+                count=0;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -841,7 +1115,7 @@ void java(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -853,28 +1127,57 @@ void java(void)
 			clrscr();
 		}
 		break;
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                java();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+		break;
+		default:
+                break;
+		}
+		}
 	}
-
  }
+ }
+
 printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
 getch();
 clrscr();
-printf("What you want?\n1) Play More\n2) Exit\n");
-scanf("%d",&w);
-clrscr();
-switch(w)
- {
- case 1: again();
-	 clrscr();
-	 break;
- case 2: break;
- }
- }
+printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                qucc();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                case 3: break;
+                default:
+                break;
+                }
+                }
  void phy(void)
 {
- int userquiz,w,score=0,c[10];
+ int userquiz,w,atg=1,score=0,count=0,c[10];
  char ch[10];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
@@ -884,9 +1187,14 @@ switch(w)
 
  for(int i=0; i<userquiz; i++)
  {
+  if(atg==0)
+  break;
+  else
+      {
 	switch(i)
 	{
 		case 0:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 	        printf("|--------------|");
@@ -897,7 +1205,7 @@ switch(w)
 		if(c[i] == 3)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -910,6 +1218,7 @@ switch(w)
 		}
 		break;
 case 1:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -920,7 +1229,7 @@ case 1:
 		if(c[i] == 3)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -933,6 +1242,7 @@ case 1:
 		}
 		break;
 case 2:
+               
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -943,7 +1253,7 @@ case 2:
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -955,8 +1265,11 @@ case 2:
 			clrscr();
 		}
 		break;
-case 3:
-		printf("\n|--------------|");
+case 3:           
+		if(count>=1)
+                {
+                count=0;
+                printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
 		printf("\n\nlinear expansion occurs in_________?");
@@ -966,7 +1279,7 @@ case 3:
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -978,7 +1291,31 @@ case 3:
 			clrscr();
 		}
 		break;
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                phy();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;
+                }
+                }
 case 4:
+                if(atg==0)
+                break;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -989,7 +1326,7 @@ case 4:
 		if(c[i] == 4)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1002,6 +1339,7 @@ case 4:
 		}
 		break;
 case 5:
+                
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -1012,7 +1350,7 @@ case 5:
 		if(c[i] == 2)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1025,7 +1363,10 @@ case 5:
 		}
 		break;
 case 6:
-		printf("\n|--------------|");
+		if(count>=1)
+                {
+                count=0;
+                printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
 		printf("\n\n1st law of motion gives the definition of _________________________?");
@@ -1035,7 +1376,7 @@ case 6:
 		if(c[i] == 3)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1047,7 +1388,31 @@ case 6:
 			clrscr();
 		}
 		break;
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                phy();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;
+                }
+                }
 case 7:
+                if(atg==0)
+                break;
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -1058,7 +1423,7 @@ case 7:
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1081,7 +1446,7 @@ case 8:
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1094,11 +1459,250 @@ case 8:
 		}
 		break;
 case 9:
-		printf("\n|--------------|");
+		if(count>=1)
+                {
+                count=0;
+                printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
 		printf("\n\nWaves transmit ________________ from one place to another?");
 		printf("\n\n\t1energy\n\t2.mass\n\t3.weight\n\t4. none\n");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 1)
+		{
+			score = score + 1;
+			printf("Correct Answer.");count++;
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"energy\".");
+			getch();
+			clrscr();
+		}
+		break;
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                phy();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;
+                }
+                }
+        }
+
+}
+}
+
+printf("\n|-------------------------------------------------|");
+printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
+printf("\n|-------------------------------------------------|");
+getch();
+clrscr();
+printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                qucc();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                case 3: break;
+                default:
+                break;
+                }
+                }
+void engl(void)
+{
+ int userquiz,w,atg=1,score=0,count=0,c[10];
+ char ch[10];
+ printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
+ printf("\n\n\tThere are 10 Questions. How many you want to play?");
+ printf("\n\tEnter here please: ");
+ scanf("%d",&userquiz);
+ clrscr();
+
+ for(int i=0; i<userquiz; i++)
+ {
+  if(atg==0)
+  break;
+  else
+      {
+	switch(i)
+	{
+		case 0:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\nAntonym of FALLACIOUS is _____?\n");
+		printf("\n\n\t1. credit\n\t2. Truthful\n\t3. Dishonest\n\t4. Clean");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 2)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"Truthful\".");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 1:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nCantonym of FOREMOST is _____?\n");
+		printf("\n\n\t1.Disposed\n\t\n\t2. Mature\n\t\n\t3. Unimportant\n\t4. hindmost");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 3)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"Unimportant");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 2:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nAntonym of QUIESCENT");
+		printf("\n\n\t1. Fallow\n\t2. DEactivated\n\t3. Aslpeep\n\t4. Active");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 4)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"Active\".");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 3:
+                if(count>=1)
+                {
+                count=0;
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nAntonym of PHILISTINE?");
+		printf("\n\n\t1. Uncultured\n\t2.Smutty\\n\t3. Uncultured\n\t4. Cultured");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 4)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"Cultured\".");
+			getch();
+			clrscr();
+		}
+		break;
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                engl();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;
+                }
+                }
+		case 4:
+                if(atg==0)
+                break;
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nAntonym of NIGGARDLY is _____?\n");
+		printf("\n\n\t1.CLoseFriend\n\t2. Skimpy\n\t3. Chintzy\n\t4. Generous");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 4)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"Generous.");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 5:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nAntonym of GARBLED is _____?");
+		printf("\n\n\t1. Unscramble\n\t2.Obscure");
 		printf("\n\nEnter only 1 option here: ");
 		scanf("%d",&c[i]);
 		if(c[i] == 1)
@@ -1111,30 +1715,184 @@ case 9:
 		else
 		{
 			printf("\nAnswer Not Correct.");
-			printf("\nCorrect Answer is \"energy\".");
+			printf("\nCorrect Answer is \"Unscramble\".");
 			getch();
 			clrscr();
 		}
 		break;
-        }
 
+		case 6:
+                if(count>=1)
+                {
+                count=0;
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nAntonym of SENILE is _____?\n");
+		printf("\n\n\t1. Alert\n\t2. Ancient\n\t3.Doting\n\t4. Anile");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 1)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"Alert\".");
+			getch();
+			clrscr();
+		}
+		break;
+                }
+                else
+                {
+                clrscr();
+                atg=0;
+                printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                scanf("%d",&w);
+                clrscr();
+                switch(w)
+                {
+                case 1:
+                engl();
+	        clrscr();
+	        break;
+                case 2:
+                again();
+                break;
+                default:
+                break;
+                }
+                }
+		case 7:
+                if(atg==0)
+                break;
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nAntonym of INORDINATE is _____?");
+		printf("\n\n\t1. Moderate\n\t2. Wasteful\n\t3. Wanton \n\t4. dizzying");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 1)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"Moderate\".");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 8:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nAntonym of LUCID is _____?");
+		printf("\n\n\t1.Obvious\n\t2.Vague\n\t3. Evident\n\t4. Explicit");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 2)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"Vague\".");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 9:
+                if(count>=1)
+                {
+                count=0;
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nAntonym of INGEST is _____?");
+		printf("\n\n\t1. Disgorge\n\t2. Devour");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 1)
+		{
+			score = score + 1;
+			printf("Correct Answer.");
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"Disgorge\".");
+			getch();
+			clrscr();
+		}
+		break;
+		}
+		else
+		{
+		clrscr();
+		atg=0;
+		printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+		printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+		scanf("%d",&w);
+		clrscr();
+		switch(w)
+		{
+		case 1:
+		engl();
+		clrscr();
+		break;
+		case 2:
+		again();
+		break;
+		default:
+                break;
+		}
+		}
+	}
+
+}
 }
 printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
 getch();
 clrscr();
-printf("What you want?\n\t1) Play More\n\t2) Exit\n");
-scanf("%d",&w);
-clrscr();
-switch(w)
- {
- case 1: again();
-	 clrscr();
-	 break;
- case 2: break;
- }
-}
+printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
+		scanf("%d",&w);
+		clrscr();
+		switch(w)
+		{
+		case 1:
+		qucc();
+		clrscr();
+		break;
+		case 2:
+		again();
+		break;
+		case 3: break;
+                default:
+                break;
+		}
+		}
 void again()
 {
 int userinp;
@@ -1147,8 +1905,9 @@ printf("1) C Quiz");
 printf("\n2) C++ QUIZ");
 printf("\n3) JAVA");
 printf("\n4) Physics");
-printf("\n5) Exit");
-printf("\n\nEnter only 1 option please: ");
+printf("\n5) ENGLISH");
+printf("\n6) Exit");
+printf("\n\nENTER: ");
 scanf("%d",&userinp);
 clrscr();
 
@@ -1171,6 +1930,10 @@ switch(userinp)
  break;
 
  case 5:
+ engl();
+ break;
+
+ case 6:
  break;
 
  default:
