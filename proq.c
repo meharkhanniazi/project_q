@@ -43,7 +43,7 @@ char ch9[10];
 };
 struct principal cd[5],de[5],ef[5];
 int ij;
-ptr9=fopen("E:\amk\reg.txt","a");
+ptr9=fopen("reg.txt","a");
 printf("Name\tRoll no.\tPassword\n");
 for(ij=0;ij<6;ij++)
 {
@@ -67,7 +67,7 @@ char ch10[10];
 };
 struct regi jk[5],kl[5],lm[5];
 int km,mn,loc=0,loc1=0,nl;
-ptr10=fopen("E:\amk\reg.txt","r");
+ptr10=fopen("reg.txt","r");
 for(km=0;km<7;km++)
 {
 fscanf(ptr10,"%s%d%d",&jk[km].ch10,&kl[km].fg,&lm[km].hi);
@@ -207,7 +207,7 @@ char ch3[10];
 };
 int choice3,g;
 struct record v[50],s[50];
-ptr3=fopen("E:\amk\C.txt","r");
+ptr3=fopen("C.txt","r");
 for(g=0;g<5;g++)
 {
 fscanf(ptr3,"%s%d",&v[g].ch3,&s[g].p);
@@ -239,7 +239,7 @@ char ch4[10];
 };
 int choice4,h;
 struct record1 t[50],l[50];
-ptr4=fopen("E:\amk\C++.txt","r");
+ptr4=fopen("C++.txt","r");
 for(h=0;h<5;h++)
 {
 fscanf(ptr4,"%s%d",&t[h].ch4,&l[h].q);
@@ -271,7 +271,7 @@ char ch5[10];
 };
 int choice5,m;
 struct record2 n[50],o[50];
-ptr5=fopen("E:\amk\JAVA.txt","r");
+ptr5=fopen("JAVA.txt","r");
 for(m=0;m<5;m++)
 {
 fscanf(ptr5,"%s%d",&n[m].ch5,&o[m].r);
@@ -299,7 +299,7 @@ FILE *ptr;
 int i,c[10],sc=0;
 int w;
 char ch[10];
-ptr=fopen("E:\amk\c.txt","a");
+ptr=fopen("c.txt","a");
 printf("\t\t\t\t|------|\n");
 printf("\t\t\t\t|C Quiz|\n");
 printf("\t\t\t\t|------|\n");
@@ -543,7 +543,7 @@ FILE *ptr1;
 int j,b[10],d=0;
 int x;
 char ch1[10];
-ptr1=fopen("E:\amk\c++.txt","a");
+ptr1=fopen("c++.txt","a");
 printf("\t\t\t\t|--------|\n");
 printf("\t\t\t\t|C++ Quiz|\n");
 printf("\t\t\t\t|--------|\n");
@@ -787,7 +787,7 @@ FILE *ptr2;
 int k,f[10],e=0;
 int z;
 char ch2[10];
-ptr2=fopen("E:\amk\java.txt","a");
+ptr2=fopen("java.txt","a");
 printf("\t\t\t\t|---------|\n");
 printf("\t\t\t\t|JAVA Quiz|\n");
 printf("\t\t\t\t|---------|\n");
@@ -1024,6 +1024,3 @@ case 0:
  case 2: break;
  }
  }
-//DONE
-//CONTRIBUTERS
-//MEHAR KHAN NIAZI ,KUNAL LALWANI,MUHAMMAD AZHAR, HASEEB 
