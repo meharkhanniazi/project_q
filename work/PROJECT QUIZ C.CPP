@@ -1,4 +1,5 @@
-
+//MEHAR KHAN NIAZI  //KUNAL LALWANI  //HASEEB
+//MUHAMMAD AZHAR
 #include<stdio.h>
 #include<conio.h>
 
