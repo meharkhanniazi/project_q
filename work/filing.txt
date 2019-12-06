@@ -1,0 +1,245 @@
+void disp_record_c()
+{
+     
+	 char name[20];
+	 int scr=0;
+	 FILE *f;
+	 f=fopen("scorec.txt","r");
+	 fscanf(f,"%s%d",&name,&scr);
+	 printf("\n|--------------------------------------------------|");
+	 printf("\n\n\t\t %s has secured the Highest Score %d",name,scr);
+	 printf("\n|--------------------------------------------------|");
+	 fclose(f);
+	 getch();
+}
+
+void reset_score_c()
+{
+	int sc=0;
+	char nm[4]={"RESET"};
+	FILE *f;
+	f=fopen("scorec.txt","w");
+	fprintf(f,"%s\n%d",nm,sc); 
+	fclose(f);
+      }
+void score_write_c(int score, char playernm[20])
+{
+	int sc;
+	char nm[20];
+	FILE *f;
+	f=fopen("scorec.txt","r");
+	fscanf(f,"%s%d",&nm,&sc);
+	if (score>=sc)
+	  { 
+        sc=score;
+	    fclose(f);
+	    f=fopen("scorec.txt","w");
+	    fprintf(f,"%s\n%d",playernm,sc); 
+	    fclose(f);
+      }
+}
+
+///////########################################################################
+void disp_record_j()
+{
+     
+	 char name[20];
+	 int scr=0;
+	 FILE *f;
+	 f=fopen("scorej.txt","r");
+	 fscanf(f,"%s%d",&name,&scr);
+	 printf("\n|--------------------------------------------------|");
+	 printf("\n\n\t\t %s has secured the Highest Score %d",name,scr);
+	 printf("\n|--------------------------------------------------|");
+	 fclose(f);
+	 getch();
+}
+void reset_score_j()
+{
+	int sc=0;
+	char nm[4]={"RESET"};
+	FILE *f;
+	f=fopen("scorej.txt","w");
+	fprintf(f,"%s\n%d",nm,sc); 
+	fclose(f);
+      }
+void score_write_j(int score, char playernm[20])
+{
+	int sc;
+	char nm[20];
+	FILE *f;
+	f=fopen("scorej.txt","r");
+	fscanf(f,"%s%d",&nm,&sc);
+	if (score>=sc)
+	  { 
+        sc=score;
+	    fclose(f);
+	    f=fopen("scorej.txt","w");
+	    fprintf(f,"%s\n%d",playernm,sc); 
+	    fclose(f);
+      }
+}
+///////########################################################################
+void disp_record_p()
+{
+     
+	 char name[20];
+	 int scr=0;
+	 FILE *f;
+	 f=fopen("scorep.txt","r");
+	 fscanf(f,"%s%d",&name,&scr);
+	 printf("\n|--------------------------------------------------|");
+	 printf("\n\n\t\t %s has secured the Highest Score %d",name,scr);
+	 printf("\n|--------------------------------------------------|");
+	 fclose(f);
+	 getch();
+}
+void reset_score_p()
+{
+	int sc=0;
+	char nm[4]={"RESET"};
+	FILE *f;
+	f=fopen("scorep.txt","w");
+	fprintf(f,"%s\n%d",nm,sc); 
+	fclose(f);
+      }
+void score_write_p(int score, char playernm[20])
+{
+	int sc;
+	char nm[20];
+	FILE *f;
+	f=fopen("scorep.txt","r");
+	fscanf(f,"%s%d",&nm,&sc);
+	if (score>=sc)
+	  { 
+        sc=score;
+	    fclose(f);
+	    f=fopen("scorep.txt","w");
+	    fprintf(f,"%s\n%d",playernm,sc); 
+	    fclose(f);
+      }
+}
+///////########################################################################
+void disp_record_e()
+{
+     
+	 char name[20];
+	 int scr=0;
+	 FILE *f;
+	 f=fopen("scoree.txt","r");
+	 fscanf(f,"%s%d",&name,&scr);
+	 printf("\n|--------------------------------------------------|");
+	 printf("\n\n\t\t %s has secured the Highest Score %d",name,scr);
+	 printf("\n|--------------------------------------------------|");
+	 fclose(f);
+	 getch();
+}
+void reset_score_e()
+{
+	int sc=0;
+	char nm[4]={"RESET"};
+	FILE *f;
+	f=fopen("scoree.txt","w");
+	fprintf(f,"%s\n%d",nm,sc); 
+	fclose(f);
+      }
+void score_write_e(int score, char playernm[20])
+{
+	int sc;
+	char nm[20];
+	FILE *f;
+	f=fopen("scoree.txt","r");
+	fscanf(f,"%s%d",&nm,&sc);
+	if (score>=sc)
+	  { 
+        sc=score;
+	    fclose(f);
+	    f=fopen("scoree.txt","w");
+	    fprintf(f,"%s\n%d",playernm,sc); 
+	    fclose(f);
+      }
+}
+///////########################################################################
+void disp_record_cc()
+{
+     
+	 char name[20];
+	 int scr=0;
+	 FILE *f;
+	 f=fopen("scorecc.txt","r");
+	 fscanf(f,"%s%d",&name,&scr);
+	 printf("\n|--------------------------------------------------|");
+	 printf("\n\n\t\t %s has secured the Highest Score %d",name,scr);
+	 printf("\n|--------------------------------------------------|");
+	 fclose(f);
+	 getch();
+}
+
+void reset_score_cc()
+{
+	int sc=0;
+	char nm[4]={"RESET"};
+	FILE *f;
+	f=fopen("scorecc.txt","w");
+	fprintf(f,"%s\n%d",nm,sc); 
+	fclose(f);
+      }
+void score_write_cc(int score, char playernm[20])
+{
+	int sc;
+	char nm[20];
+	FILE *f;
+	f=fopen("scorecc.txt","r");
+	fscanf(f,"%s%d",&nm,&sc);
+	if (score>=sc)
+	  { 
+        sc=score;
+	    fclose(f);
+	    f=fopen("scorecc.txt","w");
+	    fprintf(f,"%s\n%d",playernm,sc); 
+	    fclose(f);
+      }
+}
+///////########################################################################
+/*
+void disp_record_b()
+{
+     
+	 char name[20];
+	 int scr=0;
+	 FILE *f;
+	 f=fopen("scoreb.txt","r");
+	 fscanf(f,"%s%d",&name,&scr);
+	 printf("\n|--------------------------------------------------|");
+	 printf("\n\n\t\t %s has secured the Highest Score %d",name,scr);
+	 printf("\n|--------------------------------------------------|");
+	 fclose(f);
+	 getch();
+}
+
+void reset_score_b()
+{
+	int sc=0;
+	char nm[4]={"RESET"};
+	FILE *f;
+	f=fopen("scoreb.txt","w");
+	fprintf(f,"%s\n%d",nm,sc); 
+	fclose(f);
+      }
+void score_write_b(int score, char playernm[20])
+{
+	int sc;
+	char nm[20];
+	FILE *f;
+	f=fopen("scoreb.txt","r");
+	fscanf(f,"%s%d",&nm,&sc);
+	if (score>=sc)
+	  { 
+        sc=score;
+	    fclose(f);
+	    f=fopen("scoreb.txt","w");
+	    fprintf(f,"%s\n%d",playernm,sc); 
+	    fclose(f);
+      }
+}
+*/
