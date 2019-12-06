@@ -302,7 +302,7 @@ void quizc(void)
 		case 7:
                 if(atg==0)
                 break;
-                if(count>=1)
+                elseif(count>=1)
                 {
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
@@ -326,22 +326,7 @@ void quizc(void)
 			clrscr();
 		}
 		break;
-                }
-                else
-                {
-                clrscr();
-                printf("\n\nSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("WHAT YOU WANT?\n\t1) Play More\n\t2) Exit\n");
-                scanf("%d",&w);
-                clrscr();
-                switch(w)
-                {
-                case 1: again();
-	        clrscr();
-	        break;
-                case 2: break;
-                } 
-                }
+		}
 		case 8:
                 
 		printf("\n|--------------|");
