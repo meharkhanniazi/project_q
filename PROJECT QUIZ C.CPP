@@ -2,6 +2,7 @@
 //MUHAMMAD AZHAR
 #include<stdio.h>
 #include<conio.h>
+#include<string.h>
 
 void quizc();
 void qucc();
@@ -9,7 +10,35 @@ void java();
 void phy();
 void engl();
 void again();
-
+void kuha();
+void qucc2(void);
+//################################################
+void score_write_cc(int score, char[]);
+void reset_score_cc();
+void disp_record_cc();
+void score_write_cc2(int score, char[]);
+void reset_score_cc2();
+void disp_record_cc2();
+void score_write_e(int score,char[]);
+void reset_score_e();
+void disp_record_e();
+void score_write_p(int score,char[]);
+void reset_score_p();
+void disp_record_p();
+void score_write_j(int score,char[]);
+void reset_score_j();
+void disp_record_j();
+void score_write_c(int score,char[]);
+void reset_score_c();
+void disp_record_c();
+void scores();
+void cdata();
+void jdata();
+void pdata();
+void edata();
+void ccdata();
+void cc2data();
+//################################################
 main()
 {
 int userinp;
@@ -20,10 +49,12 @@ printf("\t\t\t--------------------------\n");
 
 printf("1) C Quiz");
 printf("\n2) C++ QUIZ");
-printf("\n3) JAVA");
-printf("\n4) Physics");
-printf("\n5) ENGLISH");
-printf("\n6) Exit");
+printf("\n3) JAVA QUIZ");
+printf("\n4) PHYSICS QUIZ");
+printf("\n5) ENGLISH GRAMMER QUIZ");
+printf("\n6) C ++ QUIZ 2");
+printf("\n7) SCORES");
+printf("\n8) Exit");
 printf("\n\nENTER: ");
 scanf("%d",&userinp);
 clrscr();
@@ -51,6 +82,14 @@ switch(userinp)
  break;
 
  case 6:
+ qucc2();
+ break;
+ 
+ case 7:
+ scores();
+ break;
+
+ case 8:
  break;
 
  default:
@@ -61,15 +100,17 @@ return 0;
 
 void quizc(void)
 {
- int userquiz,w,atg=1,score=0,count=0,c[10];
- char ch[10];
+ int userquiz,i,w,m,atg=1,score=0,count=0,c[10];
+ char ch[10],playernm[20];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
  printf("\n\tEnter here please: ");
  scanf("%d",&userquiz);
  clrscr();
+ printf("\n\n\n\t\t\tRegister your name:");
+ scanf("%s",playernm);
 
- for(int i=0; i<userquiz; i++)
+ for(i=0; i<userquiz; i++)
  {
   if(atg==0)
   break;
@@ -184,7 +225,7 @@ void quizc(void)
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -283,7 +324,7 @@ void quizc(void)
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -302,8 +343,6 @@ void quizc(void)
 		case 7:
                 if(atg==0)
                 break;
-                elseif(count>=1)
-                {
 		printf("\n|--------------|");
 		printf("Question No. %d|",i+1);
 		printf("|--------------|");
@@ -326,7 +365,7 @@ void quizc(void)
 			clrscr();
 		}
 		break;
-		}
+		
 		case 8:
                 
 		printf("\n|--------------|");
@@ -384,7 +423,7 @@ void quizc(void)
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -404,9 +443,15 @@ void quizc(void)
 
  }
  }
+for(m=0; m<1; m++)
+{
+if(atg==0)
+break;
+else
 printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
+score_write_c(score,playernm);
 getch();
 clrscr();
 printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
@@ -415,7 +460,7 @@ printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
 		switch(w)
 		{
 		case 1:
-		qucc();
+		quizc();
 		clrscr();
 		break;
 		case 2:
@@ -426,18 +471,21 @@ printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
                 break;
 		}
 		}
+}
 
 void qucc(void)
 {
- int userquiz,w,atg=1,score=0,count=0,c[10];
- char ch[10];
+ int userquiz,i,w,m,atg=1,score=0,count=0,c[10];
+ char ch[10],playernm[20];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
  printf("\n\tEnter here please: ");
  scanf("%d",&userquiz);
  clrscr();
+ printf("\n\n\n\t\t\tRegister your name:");
+ scanf("%s",playernm);
 
- for(int i=0; i<userquiz; i++)
+ for(i=0; i<userquiz; i++)
  {
   if(atg==0)
   break;
@@ -552,7 +600,7 @@ void qucc(void)
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -652,7 +700,7 @@ void qucc(void)
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -752,7 +800,7 @@ void qucc(void)
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -772,9 +820,15 @@ void qucc(void)
 
  }
  }
+for(m=0; m<1; m++)
+{
+if(atg==0)
+break;
+else
 printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
+score_write_cc(score,playernm);
 getch();
 clrscr();
 printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
@@ -794,17 +848,20 @@ printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
                 break;
                 }
                 }
+}
 void java(void)
 {
- int userquiz,w,atg=1,score=0,count=0,c[10];
- char ch[10];
+ int userquiz,i,w,m,atg=1,score=0,count=0,c[10];
+ char ch[10],playernm[20];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
  printf("\n\tEnter here please: ");
  scanf("%d",&userquiz);
  clrscr();
+ printf("\n\n\n\t\t\tRegister your name:");
+ scanf("%s",playernm);
 
- for(int i=0; i<userquiz; i++)
+ for(i=0; i<userquiz; i++)
  {
   if(atg==0)
   break;
@@ -919,7 +976,7 @@ void java(void)
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -1019,7 +1076,7 @@ void java(void)
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -1119,7 +1176,7 @@ void java(void)
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -1138,10 +1195,15 @@ void java(void)
 	}
  }
  }
-
+for(m=0; m<1; m++)
+{
+if(atg==0)
+break;
+else
 printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
+score_write_j(score,playernm);
 getch();
 clrscr();
 printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
@@ -1150,7 +1212,7 @@ printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
                 switch(w)
                 {
                 case 1:
-                qucc();
+                java();
 	        clrscr();
 	        break;
                 case 2:
@@ -1161,17 +1223,20 @@ printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
                 break;
                 }
                 }
+}
  void phy(void)
 {
- int userquiz,w,atg=1,score=0,count=0,c[10];
- char ch[10];
+ int userquiz,i,w,m,atg=1,score=0,count=0,c[10];
+ char ch[10],playernm[20];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
  printf("\n\tEnter here please: ");
  scanf("%d",&userquiz);
  clrscr();
+ printf("\n\n\n\t\t\tRegister your name:");
+ scanf("%s",playernm);
 
- for(int i=0; i<userquiz; i++)
+ for(i=0; i<userquiz; i++)
  {
   if(atg==0)
   break;
@@ -1283,7 +1348,7 @@ case 3:
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -1380,7 +1445,7 @@ case 6:
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -1476,7 +1541,7 @@ case 9:
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -1496,10 +1561,15 @@ case 9:
 
 }
 }
-
+for(m=0; m<1; m++)
+{
+if(atg==0)
+break;
+else
 printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
+score_write_p(score,playernm);
 getch();
 clrscr();
 printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
@@ -1519,17 +1589,20 @@ printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
                 break;
                 }
                 }
+}
 void engl(void)
 {
- int userquiz,w,atg=1,score=0,count=0,c[10];
- char ch[10];
+ int userquiz,i,m,w,atg=1,score=0,count=0,c[10];
+ char ch[10],playernm[20];
  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
  printf("\n\n\tThere are 10 Questions. How many you want to play?");
  printf("\n\tEnter here please: ");
  scanf("%d",&userquiz);
  clrscr();
+ printf("\n\n\n\t\t\tRegister your name:");
+ scanf("%s",playernm);
 
- for(int i=0; i<userquiz; i++)
+ for(i=0; i<userquiz; i++)
  {
   if(atg==0)
   break;
@@ -1548,7 +1621,7 @@ void engl(void)
 		if(c[i] == 2)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1572,7 +1645,7 @@ void engl(void)
 		if(c[i] == 3)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1596,7 +1669,7 @@ void engl(void)
 		if(c[i] == 4)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1623,7 +1696,7 @@ void engl(void)
 		if(c[i] == 4)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1641,7 +1714,7 @@ void engl(void)
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -1670,7 +1743,7 @@ void engl(void)
 		if(c[i] == 4)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1694,7 +1767,7 @@ void engl(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1721,7 +1794,7 @@ void engl(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1739,7 +1812,7 @@ void engl(void)
                 clrscr();
                 atg=0;
                 printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+                printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
                 scanf("%d",&w);
                 clrscr();
                 switch(w)
@@ -1768,7 +1841,7 @@ void engl(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1792,7 +1865,7 @@ void engl(void)
 		if(c[i] == 2)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1819,7 +1892,7 @@ void engl(void)
 		if(c[i] == 1)
 		{
 			score = score + 1;
-			printf("Correct Answer.");
+			printf("Correct Answer.");count++;
 			getch();
 			clrscr();
 		}
@@ -1837,7 +1910,7 @@ void engl(void)
 		clrscr();
 		atg=0;
 		printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
-		printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+		printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
 		scanf("%d",&w);
 		clrscr();
 		switch(w)
@@ -1857,9 +1930,15 @@ void engl(void)
 
 }
 }
+for(m=0; m<1; m++)
+{
+if(atg==0)
+break;
+else
 printf("\n|-------------------------------------------------|");
 printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
 printf("\n|-------------------------------------------------|");
+score_write_e(score,playernm);
 getch();
 clrscr();
 printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
@@ -1868,7 +1947,7 @@ printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
 		switch(w)
 		{
 		case 1:
-		qucc();
+		engl();
 		clrscr();
 		break;
 		case 2:
@@ -1879,12 +1958,385 @@ printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
                 break;
 		}
 		}
+}
+//#######################################################################
+void qucc2(void)
+{
+  int userquiz,i,w,m,atg=1,score=0,count=0,c[10];
+  char ch[10],playernm[20];
+  printf("\t\t\t|------------\n\t\t\t\tQuiz\n\t\t\t\t------------|");
+  printf("\n\n\tThere are 10 Questions. How many you want to play?");
+  printf("\n\tEnter here please: ");
+  scanf("%d",&userquiz);
+  clrscr();
+  printf("\n\n\n\t\t\tResister your name:");
+  scanf("%s",playernm);
+
+ for( i=0; i<userquiz; i++)
+ {
+  if(atg==0)
+  break;
+  else
+      {
+	switch(i)
+	{
+		case 0:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\n For what values of the expression is an if-statement block not executed?");
+		printf("\n\n\t1. 0 and all negative value\n\t2. 0 and -1\n\t3. 0\n\t4. 0, all negative values, all positive values");
+		printf("\n\nEnter: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 3)
+		{
+			score = score + 1;
+			printf("Correct Answer.");count++;
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"0\".");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 1:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\n #include <iostream>\n using namespace std; \n int f(int p, int q) {if (p > q)\n return p;\n else \n return q; }\n main() { \n int a = 5, b = 10;int k; \n bool x = true; \n bool y = f(a, b); \n k =((a * b) + (x + y));c");
+		printf("\n\n\t1. 55\n\t2.62\n\t3. 52\n\t4. 75");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 3)
+		{
+			score = score + 1;
+			printf("Correct Answer.");count++;
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"52\".");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 2:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\n #include <iostream> using namespace std;\n int main() {int p;\n bool a = true;\n bool b = false;\n int x = 10;\n int y = 5;\n p = ((x | y) + (a + b));\n cout << p; return 0; }");
+		printf("\n\n\t1.0\n\t2. 16\n\t3. 12\n\t4. 2");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 2)
+		{
+			score = score + 1;
+			printf("Correct Answer.");count++;
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"16\".");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 3:
+		if(count>=1)
+		{
+		count=0;
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\n Which of the following correctly declares an array?");
+		printf("\n\n\t1. int array[10];\n\t2. int array\n\t3. array[10];\n\t4. array array[10];");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 1)
+		{
+			score = score + 1;
+			printf("Correct Answer.");count++;
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"int array[10];\".");
+			getch();
+			clrscr();
+		}
+		break;
+		}
+		else
+		{
+		clrscr();
+		atg=0;
+		printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+		printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
+		scanf("%d",&w);
+		clrscr();
+		switch(w)
+		{
+		case 1:
+		qucc2();
+		clrscr();
+		break;
+		case 2:
+		again();
+		break;
+		default:
+		break;;
+		}
+		}
+
+		case 4:
+
+                if(atg==0)
+                break;
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nWhat is the index number of the last element of an array with 9 elements?");
+		printf("\n\n\t1. 9\n\t2. 8\n\t3. 0\n\t4. None of these");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 2)
+		{
+			score = score + 1;
+			printf("Correct Answer.");count++;
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"8\".");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 5:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\n    #include <stdio.h>\n #include<iostream>\n using namespace std; \n int array1[] = {1200, 200, 2300, 1230, 1543}; \n int array2[] = {12, 14, 16, 18, 20}; \n int temp, result = 0;\n int main() { \n for (temp = 0; temp < 5; temp++) { \n result += array1[temp]; } \n for (temp = 0; temp < 4; temp++) { \n result += array2[temp];} \n cout << result;return 0; }");
+		printf("\n\n\t1. 6553\n\t2. 6533\n\t3. 6522");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 2)
+		{
+			score = score + 1;
+			printf("Correct Answer.");count++;
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"6533\".");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 6:
+		if(count>=1)
+		{
+		count=0;
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\n    #include <stdio.h>\n #include<iostream>\n using namespace std;\n int main () { \n int array[] = {0, 2, 4, 6, 7, 5, 3}; \n int n, result = 0; \n for (n = 0; n < 8; n++) { \n  result += array[n]; } \n cout << result;\n return 0; }");
+		printf("\n\n\t1. 25\n\t2. 26\n\t3. 27\n\t4. 21");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 3)
+		{
+			score = score + 1;
+			printf("Correct Answer.");count++;
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"27\".");
+			getch();
+			clrscr();
+		}
+		break;
+		}
+		else
+		{
+		clrscr();
+		atg=0;
+		printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+		printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU 3) EXIT\n\t:");
+		scanf("%d",&w);
+		clrscr();
+		switch(w)
+		{
+		case 1:
+		qucc2();
+		clrscr();
+		break;
+		case 2:
+		again();
+		break;
+		default:
+		break;;
+		}
+		}
+
+		case 7:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\n #include <stdio.h>\n #include<iostream> \n using namespace std;\n int main() { \n int a = 5, b = 10, c = 15; \n int arr[3] = {&a, &b, &c}; \n cout << *arr[*arr[1] - 8]; \n return 0; }");
+		printf("\n\n\t1. 15\n\t2. 18\n\t3. Compile time  error ");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 3)
+		{
+			score = score + 1;
+			printf("Correct Answer.");count++;
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"Compile time error\".");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 8:
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\nHow many characters are specified in the ASCII scheme?");
+		printf("\n\n\t1. 64\n\t2. 128\n\t3.256\n\t4.24");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 2)
+		{
+			score = score + 1;
+			printf("Correct Answer.");count++;
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"128\".");
+			getch();
+			clrscr();
+		}
+		break;
+
+		case 9:
+		if(count>=1)
+		{
+		count=0;
+		printf("\n|--------------|");
+		printf("Question No. %d|",i+1);
+		printf("|--------------|");
+		printf("\n\n What will be the output of the following C++ code?  \n #include <iostream> \n using namespace std; \n int main() { \n char c = 74; \n cout << c; \n return 0; }");
+		printf("\n\n\t1. A\n\t2. N\n\t3. J\n\t4.I");
+		printf("\n\nEnter only 1 option here: ");
+		scanf("%d",&c[i]);
+		if(c[i] == 3)
+		{
+			score = score + 1;
+			printf("Correct Answer.");count++;
+			getch();
+			clrscr();
+		}
+		else
+		{
+			printf("\nAnswer Not Correct.");
+			printf("\nCorrect Answer is \"J\".");
+			getch();
+			clrscr();
+		}
+		break;
+		 }
+		else
+		{
+		clrscr();
+		atg=0;
+		printf("\n\n\tSORRY YOU ARE NOT ELIGIBLE TO PLAY THIS GAME, BETTER LUCK NEXT TIME");
+		printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t:");
+		scanf("%d",&w);
+		clrscr();
+		switch(w)
+		{
+		case 1:
+		qucc2();
+		clrscr();
+		break;
+		case 2:
+		again();
+		break;
+		default:
+		break;
+		}
+		}
+	}
+
+ }
+ }
+for(m=0; m<1; m++)
+{
+if(atg==0)
+break;
+else
+printf("\n|-------------------------------------------------|");
+printf("\n\n\tSCORE OUT OF %d QUESTIONS IS :%d",userquiz,score);
+printf("\n|-------------------------------------------------|");
+score_write_cc2(score,playernm);
+getch();
+clrscr();
+printf("\n\tWHAT YOU WANT?\n\t1) PLAY AGAIN \n\t2) MAIN MENU\n\t3) EXIT\n");
+		scanf("%d",&w);
+		clrscr();
+		switch(w)
+		{
+		case 1:
+		qucc2();
+		clrscr();
+		break;
+		case 2:
+		again();
+		break;
+		case 3: break;
+                default:
+                break;
+		}
+		}
+}
+////////////////######################################################
 void again()
 {
 int userinp;
 clrscr();
 printf("\t\t\t--------------------------\n");
-printf("\t\t\t|Welcome in Language Quiz|\n");
+printf("\t\t\t|WELCOME|\n");
 printf("\t\t\t--------------------------\n");
 
 printf("1) C Quiz");
@@ -1892,7 +2344,9 @@ printf("\n2) C++ QUIZ");
 printf("\n3) JAVA");
 printf("\n4) Physics");
 printf("\n5) ENGLISH");
-printf("\n6) Exit");
+printf("\n6) C ++ QUIZ 2");
+printf("\n7) SCORES");
+printf("\n8) Exit");
 printf("\n\nENTER: ");
 scanf("%d",&userinp);
 clrscr();
@@ -1920,6 +2374,317 @@ switch(userinp)
  break;
 
  case 6:
+ qucc2();
+ break;
+ 
+ case 7:
+ scores();
+ break;
+
+ case 8:
+ break;
+
+
+ default:
+ break;
+}
+getch();
+}
+///////########################################################################
+
+void disp_record_c()
+{
+     
+	 char name[20];
+	 int scr=0;
+	 FILE *f;
+	 f=fopen("scorec.txt","r");
+	 fscanf(f,"%s%d",&name,&scr);
+	 printf("\n|--------------------------------------------------|");
+	 printf("\n\n\t %s HAS SECURED THE HIGHEST SCORE %d",name,scr);
+	 printf("\n|--------------------------------------------------|");
+	 fclose(f);
+	 getch();
+}
+
+void reset_score_c()
+{
+	int sc=0;
+	char nm[5]={"RESET"};
+	FILE *f;
+	f=fopen("scorec.txt","w");
+	fprintf(f,"%s\n%d",nm,sc);
+	fclose(f);
+      }
+void score_write_c(int score, char playernm[20])//score_write_c(score,playernm);
+{
+	int sc;
+	char nm[20];
+	FILE *f;
+	f=fopen("scorec.txt","r");
+	fscanf(f,"%s%d",&nm,&sc);
+	if (score>=sc)
+	  { 
+        sc=score;
+	    fclose(f);
+	    f=fopen("scorec.txt","w");
+	    fprintf(f,"%s\n%d",playernm,sc); 
+	    fclose(f);
+      }
+}
+
+///////########################################################################
+void disp_record_j()
+{
+     
+	 char name[20];
+	 int scr=0;
+	 FILE *f;
+	 f=fopen("scorej.txt","r");
+	 fscanf(f,"%s%d",&name,&scr);
+	 printf("\n|--------------------------------------------------|");
+	 printf("\n\n\t %s HAS SECURED THE HIGHEST SCORE %d",name,scr);
+	 printf("\n|--------------------------------------------------|");
+	 fclose(f);
+	 getch();
+}
+void reset_score_j()
+{
+	int sc=0;
+	char nm[5]={"RESET"};
+	FILE *f;
+	f=fopen("scorej.txt","w");
+	fprintf(f,"%s\n%d",nm,sc); 
+	fclose(f);
+      }
+void score_write_j(int score, char playernm[20])//score_write_j(score,playernm);
+{
+	int sc;
+	char nm[20];
+	FILE *f;
+	f=fopen("scorej.txt","r");
+	fscanf(f,"%s%d",&nm,&sc);
+	if (score>=sc)
+	  { 
+        sc=score;
+	    fclose(f);
+	    f=fopen("scorej.txt","w");
+	    fprintf(f,"%s\n%d",playernm,sc); 
+	    fclose(f);
+      }
+}
+///////########################################################################
+void disp_record_p()
+{
+     
+	 char name[20];
+	 int scr=0;
+	 FILE *f;
+	 f=fopen("scorep.txt","r");
+	 fscanf(f,"%s%d",&name,&scr);
+	 printf("\n|--------------------------------------------------|");
+	 printf("\n\n\t %s HAS SECURED THE HIGHEST SCORE %d",name,scr);
+	 printf("\n|--------------------------------------------------|");
+	 fclose(f);
+	 getch();
+}
+void reset_score_p()
+{
+	int sc=0;
+	char nm[5]={"RESET"};
+	FILE *f;
+	f=fopen("scorep.txt","w");
+	fprintf(f,"%s\n%d",nm,sc); 
+	fclose(f);
+      }
+void score_write_p(int score, char playernm[20])//score_write_p(score,playernm);
+{
+	int sc;
+	char nm[20];
+	FILE *f;
+	f=fopen("scorep.txt","r");
+	fscanf(f,"%s%d",&nm,&sc);
+	if (score>=sc)
+	  { 
+        sc=score;
+	    fclose(f);
+	    f=fopen("scorep.txt","w");
+	    fprintf(f,"%s\n%d",playernm,sc); 
+	    fclose(f);
+      }
+}
+///////########################################################################
+void disp_record_e()
+{
+     
+	 char name[20];
+	 int scr=0;
+	 FILE *f;
+	 f=fopen("scoree.txt","r");
+	 fscanf(f,"%s%d",&name,&scr);
+	 printf("\n|--------------------------------------------------|");
+	 printf("\n\n\t %s HAS SECURED THE HIGHEST SCORE %d",name,scr);
+	 printf("\n|--------------------------------------------------|");
+	 fclose(f);
+	 getch();
+}
+void reset_score_e()
+{
+	int sc=0;
+	char nm[5]={"RESET"};
+	FILE *f;
+	f=fopen("scoree.txt","w");
+	fprintf(f,"%s\n%d",nm,sc); 
+	fclose(f);
+      }
+void score_write_e(int score, char playernm[20])//score_write_e(score,playernm);
+{
+	int sc;
+	char nm[20];
+	FILE *f;
+	f=fopen("scoree.txt","r");
+	fscanf(f,"%s%d",&nm,&sc);
+	if (score>=sc)
+	  { 
+        sc=score;
+	    fclose(f);
+	    f=fopen("scoree.txt","w");
+	    fprintf(f,"%s\n%d",playernm,sc); 
+	    fclose(f);
+      }
+}
+///////########################################################################
+void disp_record_cc()
+{
+     
+	 char name[20];
+	 int scr=0;
+	 FILE *f;
+	 f=fopen("scorecc.txt","r");
+	 fscanf(f,"%s%d",&name,&scr);
+	 printf("\n|--------------------------------------------------|");
+	 printf("\n\n\t %s HAS SECURED THE HIGHEST SCORE %d",name,scr);
+	 printf("\n|--------------------------------------------------|");
+	 fclose(f);
+	 getch();
+}
+
+void reset_score_cc()
+{
+	int sc=0;
+	char nm[5]={"RESET"};
+	FILE *f;
+	f=fopen("scorecc.txt","w");
+	fprintf(f,"%s\n%d",nm,sc); 
+	fclose(f);
+      }
+void score_write_cc(int score, char playernm[20])//score_write_cc(score,playernm);
+{
+	int sc;
+	char nm[20];
+	FILE *f;
+	f=fopen("scorecc.txt","r");
+	fscanf(f,"%s%d",&nm,&sc);
+	if (score>=sc)
+	  { 
+        sc=score;
+	    fclose(f);
+	    f=fopen("scorecc.txt","w");
+	    fprintf(f,"%s\n%d",playernm,sc); 
+	    fclose(f);
+      }
+}
+///////########################################################################
+void disp_record_cc2()
+{
+     
+	 char name[20];
+	 int scr=0;
+	 FILE *f;
+	 f=fopen("scorecc2.txt","r");
+	 fscanf(f,"%s%d",&name,&scr);
+	 printf("\n|--------------------------------------------------|");
+	 printf("\n\n\t %s HAS SECURED THE HIGHEST SCORE %d",name,scr);
+	 printf("\n|--------------------------------------------------|");
+	 fclose(f);
+         kuha();
+	 getch();
+}
+
+void reset_score_cc2()
+{
+	int sc=0;
+	char nm[5]={"RESET"};
+	FILE *f;
+	f=fopen("scorecc2.txt","w");
+	fprintf(f,"%s\n%d",nm,sc); 
+	fclose(f);
+      }
+void score_write_cc2(int score, char playernm[20])//score_write_cc(score,playernm);
+{
+	int sc;
+	char nm[20];
+	FILE *f;
+	f=fopen("scorecc2.txt","r");
+	fscanf(f,"%s%d",&nm,&sc);
+	if (score>=sc)
+	  { 
+        sc=score;
+	    fclose(f);
+	    f=fopen("scorecc2.txt","w");
+	    fprintf(f,"%s\n%d",playernm,sc); 
+	    fclose(f);
+      }
+}
+
+
+
+//#####################################################
+void scores()
+{
+int userinp;
+clrscr();
+printf("1) C QUIZ HIGHEST SCORE");
+printf("\n2) C++ QUIZ HIGHEST SCORE");
+printf("\n3) JAVA QUIZ HIGHEST SCORE");
+printf("\n4) PHYSICS QUIZ HIGHEST SCORE");
+printf("\n5) ENGLISH QUIZ HIGHEST SCORE");
+printf("\n6) C QUIZ 2 HIGHEST SCORE");
+printf("\n7) MAIN MENU");
+printf("\n8) EXIT");
+printf("\n\nENTER: ");
+scanf("%d",&userinp);
+switch(userinp)
+{
+ case 1:
+ cdata();
+ break;
+
+ case 2:
+ ccdata();
+ break;
+
+ case 3:
+ jdata();
+ break;
+
+ case 4:
+ pdata();
+ break;
+
+ case 5:
+ edata();
+ break;
+
+ case 6:
+ cc2data();
+ break;
+
+ case 7:
+ again();
+ break;
+
+ case 8:
  break;
 
  default:
@@ -1927,3 +2692,179 @@ switch(userinp)
 }
 getch();
 }
+//#####################################################
+void cdata()
+{
+int k;
+clrscr();
+printf("\n\tWHAT YOU WANT?\n\t1) SHOW RECORD \n\t2) RESET DATA\n\t3) EXIT\n");
+scanf("%d",&k);
+		clrscr();
+		switch(k)
+		{
+		case 1:
+		disp_record_c();
+		clrscr();
+		break;
+		case 2:
+		reset_score_c();
+		break;
+		case 3: 
+                break;
+		default:
+		break;
+		}
+		
+getch();
+}
+//#####################################################
+void jdata()
+{
+int k;
+clrscr();
+printf("\n\tWHAT YOU WANT?\n\t1) SHOW RECORD \n\t2) RESET DATA\n\t3) EXIT\n");
+scanf("%d",&k);
+		clrscr();
+		switch(k)
+		{
+		case 1:
+		disp_record_j();
+		clrscr();
+		break;
+		case 2:
+		reset_score_j();
+		break;
+		case 3: 
+                break;
+		default:
+		break;
+		}
+		
+getch();
+}
+//#####################################################
+void pdata()
+{
+int k;
+clrscr();
+printf("\n\tWHAT YOU WANT?\n\t1) SHOW RECORD \n\t2) RESET DATA\n\t3) EXIT\n");
+scanf("%d",&k);
+		clrscr();
+		switch(k)
+		{
+		case 1:
+		disp_record_p();
+		clrscr();
+		break;
+		case 2:
+		reset_score_p();
+		break;
+		case 3: 
+                break;
+		default:
+		break;
+		}
+		
+getch();
+}
+//#####################################################
+void edata()
+{
+int k;
+clrscr();
+printf("\n\tWHAT YOU WANT?\n\t1) SHOW RECORD \n\t2) RESET DATA\n\t3) EXIT\n");
+scanf("%d",&k);
+		clrscr();
+		switch(k)
+		{
+		case 1:
+		disp_record_e();
+		clrscr();
+		break;
+		case 2:
+		reset_score_e();
+		break;
+		case 3: 
+                break;
+		default:
+		break;
+		}
+		
+getch();
+}
+//#####################################################
+void ccdata()
+{
+int k;
+clrscr();
+printf("\n\tWHAT YOU WANT?\n\t1) SHOW RECORD \n\t2) RESET DATA\n\t3) EXIT\n");
+scanf("%d",&k);
+		clrscr();
+		switch(k)
+		{
+		case 1:
+		disp_record_cc();
+		clrscr();
+		break;
+		case 2:
+		reset_score_cc();
+		break;
+		case 3: 
+                break;
+		default:
+		break;
+		}
+		
+getch();
+}
+//#####################################################
+void cc2data()
+{
+int k;
+clrscr();
+printf("\n\tWHAT YOU WANT?\n\t1) SHOW RECORD \n\t2) RESET DATA\n\t3) EXIT\n");
+scanf("%d",&k);
+		clrscr();
+		switch(k)
+		{
+		case 1:
+		disp_record_cc2();
+		clrscr();
+		break;
+		case 2:
+		reset_score_cc2();
+		break;
+		case 3: 
+                break;
+		default:
+		break;
+		}
+		
+getch();
+}
+//#####################################################
+void kuha()         //JUST LIKE AGAIN FUNCTION
+{
+int w;
+printf("\n\n\tWHAT YOU WANT?\n\n\t1) BACK\n\t2) MAIN MENU\n\t3) EXIT\n");
+		scanf("%d",&w);
+		clrscr();
+		switch(w)
+		{
+                case 1:
+		scores();
+		break;
+
+		case 2:
+		again();
+		break;
+
+		case 3: 
+                break;
+                default:
+                break;
+		}
+
+getch();
+}
+//#####################################################
