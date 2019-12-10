@@ -6962,4 +6962,4 @@ printf("\n\n\t  ALL RECORD RESET SUCCESSFULLY");
 printf("\n\n\t||--------------------------------||");
 scores();
       }
-//#################################### all reset fn end
+//#################################### all reset function end
